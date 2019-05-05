@@ -1,0 +1,1598 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	INGENIERIA DE SISTEMAS DE COMPUTACION
+</title>
+    <link type="text/css" rel="stylesheet" href="../../css/academico/pensum_app.css" />
+    <link type="text/css" rel="stylesheet" href="../../js/custom_scroller/jquery.mCustomScrollbar_1.css" />
+    <script type="text/javascript" src="../../js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript" src='../../js/custom_scroller/jquery.easing.1.3.js'></script>
+    <script type="text/javascript" src='../../js/custom_scroller/jquery.mousewheel.min.js'></script>
+</head>
+<body>
+    <form method="post" action="./pensum.aspx?carrera=ISC" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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ZAIGDxUBAGQCAw9kFgoCAQ8WAh8ABQdURVMtTU9OZAICDxUBJFRSQUJBSk8gREUgR1JBRE8gTyBDVVJTTyBNT05PR1JBRklDT2QCAw8WAh8ABQE2ZAIFDxYCHwAFCFNPQzI4MSAgZAIGDxUBJDxiciAvPjkyJSBEZSBsb3MgY3LDqWRpdG9zIGFwcm9iYWRvc2QCBg8WAh8ABQMyMDhkAgcPFgIfAAUlSU5HRU5JRVJJQSBERSBTSVNURU1BUyBERSBDT01QVVRBQ0lPTmQCCA8WAh8ABUZBcHJvYmFyIHVuIERlcG9ydGUuIEFjdGl0dWQgUHJvZmVzaW9uYWw6IDYwIGhvcmFzLiAgUEFTMjEwOiAxNTAgaG9yYXMuZBgOBTJsdndMaXN0YWRvQ3VhdHJpbWVzdHJlcyRjdHJsMSRjdGwwMiRsdndBc2lnbmF0dXJhcw8UKwAOZGRkZGRkZDwrAAYAAgZkZGRmAv////8PZAUybHZ3TGlzdGFkb0N1YXRyaW1lc3RyZXMkY3RybDAkY3RsMDMkbHZ3QXNpZ25hdHVyYXMPFCsADmRkZGRkZGQ8KwAGAAIGZGRkZgL/////D2QFMmx2d0xpc3RhZG9DdWF0cmltZXN0cmVzJGN0cmwwJGN0bDA2JGx2d0FzaWduYXR1cmFzDxQrAA5kZGRkZGRkPCsABgACBmRkZGYC/////w9kBRdsdndMaXN0YWRvQ3VhdHJpbWVzdHJlcw8UKwAOZGRkAgdkZGQ8KwAMAAIMZGRkZgL/////D2QFCk11bHRpVmlldzEPD2RmZAUybHZ3TGlzdGFkb0N1YXRyaW1lc3RyZXMkY3RybDEkY3RsMDMkbHZ3QXNpZ25hdHVyYXMPFCsADmRkZGRkZGQ8KwAHAAIHZGRkZgL/////D2QFMmx2d0xpc3RhZG9DdWF0cmltZXN0cmVzJGN0cmwwJGN0bDAyJGx2d0FzaWduYXR1cmFzDxQrAA5kZGRkZGRkPCsABwACB2RkZGYC/////w9kBTJsdndMaXN0YWRvQ3VhdHJpbWVzdHJlcyRjdHJsMSRjdGwwMSRsdndBc2lnbmF0dXJhcw8UKwAOZGRkZGRkZDwrAAcAAgdkZGRmAv////8PZAUybHZ3TGlzdGFkb0N1YXRyaW1lc3RyZXMkY3RybDAkY3RsMDQkbHZ3QXNpZ25hdHVyYXMPFCsADmRkZGRkZGQ8KwAGAAIGZGRkZgL/////D2QFMmx2d0xpc3RhZG9DdWF0cmltZXN0cmVzJGN0cmwwJGN0bDAwJGx2d0FzaWduYXR1cmFzDxQrAA5kZGRkZGRkPCsABwACB2RkZGYC/////w9kBTJsdndMaXN0YWRvQ3VhdHJpbWVzdHJlcyRjdHJsMSRjdGwwMCRsdndBc2lnbmF0dXJhcw8UKwAOZGRkZGRkZDwrAAcAAgdkZGRmAv////8PZAUybHZ3TGlzdGFkb0N1YXRyaW1lc3RyZXMkY3RybDAkY3RsMDUkbHZ3QXNpZ25hdHVyYXMPFCsADmRkZGRkZGQ8KwAHAAIHZGRkZgL/////D2QFMmx2d0xpc3RhZG9DdWF0cmltZXN0cmVzJGN0cmwwJGN0bDAxJGx2d0FzaWduYXR1cmFzDxQrAA5kZGRkZGRkPCsABgACBmRkZGYC/////w9kBTJsdndMaXN0YWRvQ3VhdHJpbWVzdHJlcyRjdHJsMSRjdGwwNCRsdndBc2lnbmF0dXJhcw8UKwAOZGRkZGRkZBQrAANkZGQCA2RkZGYC/////w9k1vyO6uqzQMl1SidCf4cvnfIndf6EEBWKRXAILcmvww0=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3465F5B2" />
+</div>
+        
+                <!-- content block -->
+                <div id="mcs_container">
+                    <div class="customScrollBox">
+                        <div class="container">
+                            <div class="content">
+                                <!-- *************** CONTENIDO ******************* -->
+                                <div class="contPensum">
+                                    <div class="cabPensum">
+                                        <h1>
+                                            <span style="margin-top: 25px">
+                                                INGENIERIA DE SISTEMAS DE COMPUTACION</span></h1>
+                                        <p>
+                                            Codigo Pensum: <strong>
+                                                ISC10</strong>, Fecha
+                                        Vigencia: <strong>
+                                            01/05/2012</strong></p>
+                                        <ul class="btns">
+                                        <li style=""><a href="javascript:window.print();" id="btnImprimir">
+                                                <img src="../../img/plantillas/academico/pensum/imprimir.png" border="0" width="101" height="33"
+                                                    alt="" /></a></li>
+                                            <li>
+                                                <a id="btnDescarga" href="../../Content/Documentos/Pensums/All/ISC.pdf"><img id="imgDescargarPensum" src="../../img/plantillas/academico/pensum/descargar.png" alt="Descargar Pensum" /></a>
+                                            </li>
+                                        </ul>
+                                        <!--/contPensum-->
+                                    </div>
+                                    <!--//////// PENSUM ////////-->
+                                    
+                                            
+                                            <div class="col">
+                                                
+                                            <h2 class="nivel">
+                                                Cuatrimestre 1</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ESP101
+                                                        </td>
+                                                        <td>
+                                                            ANALISIS DE TEXTOS DISCURSIVOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF319
+                                                        </td>
+                                                        <td>
+                                                            COMPUTACION I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT126
+                                                        </td>
+                                                        <td>
+                                                            MATEMATICA BASICA PARA INGENIERIA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC011
+                                                        </td>
+                                                        <td>
+                                                            HISTORIA SOCIAL DOMINICANA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC030
+                                                        </td>
+                                                        <td>
+                                                            ORIENTACION UNIVERSITARIA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC043
+                                                        </td>
+                                                        <td>
+                                                            GESTION AMBIENTAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG001
+                                                        </td>
+                                                        <td>
+                                                            INGLES I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 2</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ESP102
+                                                        </td>
+                                                        <td>
+                                                            REDACCION DE TEXTOS DISCURSIVOS I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            ESP101  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF321
+                                                        </td>
+                                                        <td>
+                                                            ALGORITMOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            INF319  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT127
+                                                        </td>
+                                                        <td>
+                                                            MATEMATICA SUPERIOR PARA INGENIERIA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            MAT126  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC111
+                                                        </td>
+                                                        <td>
+                                                            FISICA GENERAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            MAT126  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC132
+                                                        </td>
+                                                        <td>
+                                                            LABORATORIO FISICA GENERAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            MAT126  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG002
+                                                        </td>
+                                                        <td>
+                                                            INGLES II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG001  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 3</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ESP103
+                                                        </td>
+                                                        <td>
+                                                            REDACCION DE TEXTOS DISCURSIVOS II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            ESP102  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF140
+                                                        </td>
+                                                        <td>
+                                                            PROGRAMACION ESTRUCTURADA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF321  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF323
+                                                        </td>
+                                                        <td>
+                                                            ARQUITECTURA DEL COMPUTADOR
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF321  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT222
+                                                        </td>
+                                                        <td>
+                                                            ALGEBRA LINEAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            MAT127  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC031
+                                                        </td>
+                                                        <td>
+                                                            ETICA PROFESIONAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC150
+                                                        </td>
+                                                        <td>
+                                                            RELACIONES HUMANAS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG003
+                                                        </td>
+                                                        <td>
+                                                            INGLES III
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG002  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 4</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            CON107
+                                                        </td>
+                                                        <td>
+                                                            CONTABILIDAD EMPRESARIAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            MAT222  SOC031  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF111
+                                                        </td>
+                                                        <td>
+                                                            PROGRAMACION ORIENTADA  A OBJETOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF140  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF160
+                                                        </td>
+                                                        <td>
+                                                            ANALISIS Y DISEÑO DE SISTEMAS I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF140  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF168
+                                                        </td>
+                                                        <td>
+                                                            SISTEMAS OPERATIVOS I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF323  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT131
+                                                        </td>
+                                                        <td>
+                                                            CALCULO Y GEOMETRIA ANALITICA I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            MAT222  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG004
+                                                        </td>
+                                                        <td>
+                                                            INGLES IV
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG003  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 5</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            INF152
+                                                        </td>
+                                                        <td>
+                                                            ESTRUCTURA DE DATOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF111  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF161
+                                                        </td>
+                                                        <td>
+                                                            ANALISIS Y DISEÑO DE SISTEMAS II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF160  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT132
+                                                        </td>
+                                                        <td>
+                                                            CALCULO Y GEOMETRIA ANALITICA II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            MAT131  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC113
+                                                        </td>
+                                                        <td>
+                                                            FISICA ELECTRICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            TEC111  TEC132  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC120
+                                                        </td>
+                                                        <td>
+                                                            LABORATORIO FISICA ELECTRICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            TEC111  TEC132  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG005
+                                                        </td>
+                                                        <td>
+                                                            INGLES V
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG004  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 6</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            INF166
+                                                        </td>
+                                                        <td>
+                                                            TELEPROCESO I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF168  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF169
+                                                        </td>
+                                                        <td>
+                                                            SISTEMAS OPERATIVOS II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF168  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT151
+                                                        </td>
+                                                        <td>
+                                                            MATEMATICA DISCRETA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            MAT132  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            MAT252
+                                                        </td>
+                                                        <td>
+                                                            PROBABILIDAD Y ESTADISTICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            MAT132  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC123
+                                                        </td>
+                                                        <td>
+                                                            LABOR.CIRCUITOS ELECTRICOS I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            TEC113  TEC120  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC146
+                                                        </td>
+                                                        <td>
+                                                            CIRCUITOS ELECTRICOS I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            TEC113  TEC120  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG006
+                                                        </td>
+                                                        <td>
+                                                            INGLES VI
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG005  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 7</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ADM091
+                                                        </td>
+                                                        <td>
+                                                            ADMINISTRACION I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF167
+                                                        </td>
+                                                        <td>
+                                                            TELEPROCESO II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF166  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF315
+                                                        </td>
+                                                        <td>
+                                                            SISTEMAS OPERATIVOS III
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF169  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF402
+                                                        </td>
+                                                        <td>
+                                                            FUNDAMENTOS DE BASES DE DATOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            MAT151  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC250
+                                                        </td>
+                                                        <td>
+                                                            METODOLOGIA DE LA INVESTIGACION CIENTIFICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG007
+                                                        </td>
+                                                        <td>
+                                                            INGLES VII
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG006  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            </div>
+                                        
+                                            <div class="col">
+                                                
+                                            <h2 class="nivel">
+                                                Cuatrimestre 8</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ADM150
+                                                        </td>
+                                                        <td>
+                                                            GERENCIA DE PROCESOS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            ADM091  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF309
+                                                        </td>
+                                                        <td>
+                                                            TECNOLOGIAS DE INTERNET
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF315  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF325
+                                                        </td>
+                                                        <td>
+                                                            PROGRAMACION VISUAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            INF152  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF327
+                                                        </td>
+                                                        <td>
+                                                            COMUNICACIONES
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF169  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC148
+                                                        </td>
+                                                        <td>
+                                                            ELECTRONICA I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            TEC123  TEC146  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC155
+                                                        </td>
+                                                        <td>
+                                                            LAB.DE ELECTRONICA I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            TEC123  TEC146  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ENG008
+                                                        </td>
+                                                        <td>
+                                                            INGLES VIII
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG007  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 9</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            IDI045
+                                                        </td>
+                                                        <td>
+                                                            INGLES PARA INFORMATICA I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ENG008  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            IND371
+                                                        </td>
+                                                        <td>
+                                                            INVESTIGACION DE OPERACIONES PARA INFORMATICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            MAT252  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF307
+                                                        </td>
+                                                        <td>
+                                                            ADMINISTRACION DE REDES
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF327  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF324
+                                                        </td>
+                                                        <td>
+                                                            INTROD. INTELIGENCIA ARTIF.
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF309  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF403
+                                                        </td>
+                                                        <td>
+                                                            BASES DE DATOS DISTRIBUIDAS Y MULTIDIMENSIONALES
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF309  INF325  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC190
+                                                        </td>
+                                                        <td>
+                                                            LOGICA DIGITAL I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            TEC148  TEC155  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC200
+                                                        </td>
+                                                        <td>
+                                                            LAB. LOGICA DIGITAL I
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            TEC148  TEC155  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 10</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            DER179
+                                                        </td>
+                                                        <td>
+                                                            DERECHO APLICADO A LA INFORMATICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            IDI046
+                                                        </td>
+                                                        <td>
+                                                            INGLES PARA INFORMATICA II
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            IDI045  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            IND423
+                                                        </td>
+                                                        <td>
+                                                            INGENIERIA ECONOMICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            IND371  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF329
+                                                        </td>
+                                                        <td>
+                                                            SEGURIDAD
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            INF307  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ISC404
+                                                        </td>
+                                                        <td>
+                                                            ESTANDARES Y TENDENCIAS DE LA INDUSTRIA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            TEC190  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TEC614
+                                                        </td>
+                                                        <td>
+                                                            AUTOMATIZACION Y ROBOTICA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            4
+                                                        </td>
+                                                        <td>
+                                                            INF324  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 11</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            ADM120
+                                                        </td>
+                                                        <td>
+                                                            LIDERAZGO Y TECNICAS DE SUPERVISION
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ADM150  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ADM535
+                                                        </td>
+                                                        <td>
+                                                            ACTITUD EMPRENDEDORA
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            ADM150  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF204
+                                                        </td>
+                                                        <td>
+                                                            ADMINISTRACION DE CENTROS
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF329  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF328
+                                                        </td>
+                                                        <td>
+                                                            SISTEMAS BASADOS EN EL CONOCIMIENTO
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            INF324  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            INF407
+                                                        </td>
+                                                        <td>
+                                                            HACKING ETICO
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            DER179  INF329  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            ISC406
+                                                        </td>
+                                                        <td>
+                                                            COMPUTACION FORENSE
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            DER179  INF329  
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            SOC281
+                                                        </td>
+                                                        <td>
+                                                            SEMINARIO DE GRADO
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            3
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            <br />80% De los créditos aprobados
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            <h2 class="nivel">
+                                                Cuatrimestre 12</h2>
+                                            
+                                                    <table class="cuatrim" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <th>Código
+                                                            </th>
+                                                            <th>Asignatura
+                                                            </th>
+                                                            <th style="text-align: center">Créditos
+                                                            </th>
+                                                            <th>Pre-Requisitos
+                                                            </th>
+                                                        </tr>
+                                                        
+                                                    <tr>
+                                                        <td>
+                                                            OPTDEP
+                                                        </td>
+                                                        <td>
+                                                            OPTATIVA DEPORTE
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            0
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            PAS210
+                                                        </td>
+                                                        <td>
+                                                            PASANTIA EMPRESARIAL
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            0
+                                                        </td>
+                                                        <td>
+                                                            
+                                                            
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            TES-MON
+                                                        </td>
+                                                        <td>
+                                                            TRABAJO DE GRADO O CURSO MONOGRAFICO
+                                                        </td>
+                                                        <td style="text-align: center">
+                                                            6
+                                                        </td>
+                                                        <td>
+                                                            SOC281  
+                                                            <br />92% De los créditos aprobados
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    </table>
+                                                
+                                        
+                                            </div>
+                                        
+                                        
+                                    <div class="col">
+                                        <div class="infoCarrera">
+                                            <p class="bullet">
+                                                TOTAL GENERAL DE CRÉDITOS:
+                                            208
+                                            </p>
+                                            <p class="bullet">
+                                                TÍTULO:
+                                            INGENIERIA DE SISTEMAS DE COMPUTACION
+                                            </p>
+                                            <p class="bullet">
+                                                REQUISITO GENERAL DE LA GRADUACIÓN:
+                                            Aprobar un Deporte. Actitud Profesional: 60 horas.  PAS210: 150 horas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- información de la  carrera -->
+                                <!-- ********************************************* -->
+                                <!-- ********************************************* -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SCROLL -->
+                    <div class="dragger_container">
+                        <div class="dragger">
+                        </div>
+                    </div>
+                    <a href="#" class="scrollUpBtn"></a><a href="#" class="scrollDownBtn"></a>
+                </div>
+                <!-- content to show if javascript is disabled -->
+                <noscript>
+                    <style type="text/css">
+                        #mcs_container .customScrollBox { overflow: auto; }
+                        #mcs_container .dragger_container { display: none; }
+                    </style>
+                </noscript>
+                <script type="text/javascript" src='../../js/custom_scroller/jquery.mCustomScrollbar.js'></script>
+                <script type="text/javascript" src='../../js/custom_scroller/general.js'></script>
+            
+    </form>
+</body>
+</html>

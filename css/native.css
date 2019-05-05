@@ -1,0 +1,65 @@
+html,body{
+	background:#3d679c url(../img/bg_pensum.jpg) repeat-x center top; margin:0; padding:0;
+}
+.contPensum{
+	margin:0 auto; padding:25px 20px 50px 20px;
+	width:893px;
+	-moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;
+	background:#ffffff;
+	font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#222;
+	overflow:auto !important;
+}
+.cabPensum{
+	min-height:130px;
+	padding:0 0 0 110px;
+	margin-bottom:50px;
+	background:url(../img/logo.png) no-repeat left center;
+}
+.cabPensum h1 span{
+	color:#222; text-transform:uppercase; display:block; font-weight:bold;
+}
+.cabPensum p{ text-align:right; margin-top:5px;
+}
+.col{
+	position:relative; float:left; width:432px; margin-right:27px;
+}
+.col+.col{ margin-right:0;
+}
+
+/* pensum */
+.cuatrim{
+	width:432px; background:#eaeaea url(../img/bg_th.png) 0 0 no-repeat; padding:3px 7px;
+}
+h2.nivel{
+	font-weight:bold; color:#000; text-align:left; text-transform:uppercase; font-size:14px !important; margin:25px 0 5px 0;
+}
+.cuatrim th{
+	width:63px; font-size:12px; text-align:left; color:#fff; height:29px;
+}
+.cuatrim th+th{
+	width:206px;
+}
+.cuatrim th+th+th{
+	width:70px;
+}
+.cuatrim th+th+th+th{
+	width:93px;
+}
+.cuatrim td{
+	font-size:11px; padding:2px 0;
+}
+.cuatrim tr.total td{
+	font-weight:bold !important; border-top:2px solid #fff;
+}
+/**/
+div.infoCarrera{
+	font-weight:bold;
+	font-size:12px;
+	padding:10px 90px 10px 30px; margin-top:30px;
+	border:3px solid #9db4cd;
+	-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+	background:url(../img/logo-info.png) no-repeat 350px center;
+}
+.infoCarrera ul{
+	list-style:none; margin:-8px 0 0 0; padding:0;
+}

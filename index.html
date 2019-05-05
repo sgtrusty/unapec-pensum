@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1">
+	<title>
+		Planificador y Gestor de materias
+	</title>
+	<link type="text/css" rel="stylesheet" href="css/native.css" />
+  <link rel="stylesheet" href="css/custom-colored.css" />
+  <link rel="stylesheet" href="css/Treant.css" />
+	<!--link type="text/css" rel="stylesheet" href="pensum_app.css" /-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+
+	</script>
+	<script type="text/javascript" src="js/addon.js"></script>
+	<script type="text/javascript" src="js/jquery.base64.min.js"></script>
+  <script type="text/javascript" src="js/Treant.js"></script>
+  <script type="text/javascript" src="js/raphael.js"></script>
+  <!--script type="text/javascript" src="js/custom-colored.js"></script-->
+	<!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
+</head>
+
+<body>
+  <select id="dropper">
+    <option value="iso">Ingenieria de Software</option>
+    <option value="isc">Ingenieria de Computacion</option>
+  </select>
+  <button type"button" id="dropperBtn">Cargar</button>
+  <div style="margin-top:15px; display:block;">
+    
+    <a id="programatically" href="#" download="config.txt" style="    text-decoration: none;"><input type="button" id="savebtn" value="Save" disabled/></a>
+    <input type="button" id="loadbtn" value="Load" disabled/>
+<input type="file" id="file1"  name="file1" style="display:none" />
+    <!--div>
+      <textarea rows="4" cols="50" id="dlarea" style="display:block;" disabled>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</textarea>
+    </div-->
+    <input type="button" id="genebtn" value="Gen. Diagram" disabled/>
+  </div>
+  <div class="chart" id="custom-colored"> --@-- </div>
+  <div id="loader"></div>
+</body>
+</html>
