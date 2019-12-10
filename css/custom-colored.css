@@ -74,9 +74,29 @@ div.infoCarreraPlus > span#currentAsignaturas {
 #myBar {
   width: 0%;
   height: 30px;
-  background-color: #4CAF50;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 30px; /* To center it vertically */
   color: white;
+}
+#myBar.status1 {
+  background-color: rgb(0, 0, 0);
+}
+#myBar.status2 {
+  background-color: rgb(255, 50, 50);
+}
+#myBar.status3 {
+  background-color: rgb(175, 76, 76);
+}
+#myBar.status4 {
+  background-color: rgb(168, 175, 76);
+}
+#myBar.status5 {
+  background-color: rgb(76, 175, 145);
+}
+#myBar.status6 {
+  background-color: rgb(76, 175, 109);
+}
+#myBar.statusFinal {
+  background-color: #4CAF50;
 }
 

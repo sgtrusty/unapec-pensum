@@ -319,8 +319,26 @@ function trigger_creditsProgressBar() {
     var elem = document.getElementById("myBar");
     var width = creditsHolder['credits']/creditsHolder['creditsTotal'] * 100;
 	var rounded = Math.round(width * 100) / 100;
+	
 	elem.style.width = rounded + "%";
 	elem.innerHTML = rounded + "%";
+
+	elem.className = '';
+	if(rounded == 100) {
+		elem.classList.add("statusFinal");
+	} else if(rounded > 85) {
+		elem.classList.add("status6");
+	} else if(rounded > 65) {
+		elem.classList.add("status5");
+	} else if(rounded > 45) {
+		elem.classList.add("status4");
+	} else if(rounded > 35) {
+		elem.classList.add("status3");
+	} else if(rounded > 15) {
+		elem.classList.add("status2");
+	} else {
+		elem.classList.add("status1");
+	}
 }
 
 function saveConfig(e) {
