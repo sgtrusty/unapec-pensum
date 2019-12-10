@@ -28,22 +28,49 @@ var sList = "";
 var fileReader;
 var fileLoader;
 
+var creditsHolder = {};
+
+function resetCreditsHolder() {
+	creditsHolder = {
+		credits: 0,
+		creditsTotal: 0,
+		numAsignaturas: 0,
+		numAsignaturasTotal: 0
+	};
+}
+
 function checkBoxMark(target) {
     var checked = target.checked;
     var id = target.parentElement.childNodes[1].innerText.trimStart().trimEnd();
     // avoid redundancy
     if (asignaturas[id]['selected'] == checked) return;
 
+    // TODO: pattern ".\d\% De los créditos aprobados" spec. req
+    var credHolder = document.getElementById("currentCredits");
+    var asigHolder = document.getElementById("currentAsignaturas");
     if (checked == false) {
         var header = target.parentElement.parentElement.querySelector(".headcheck");
         var checkboxes = header.querySelectorAll("input[type=checkbox]");
 
         checkboxes.forEach((button) => {
-            button.checked = false;
-            //addEventListener('click', () => {
-            //  console.log("forEach worked");
-            //});
+			if(button.checked) {
+				button.checked = false;
+				header.classList.remove('highlight');
+			}
         });
+	  creditsHolder['credits'] -= parseInt(asignaturas[id]['creditos']);
+	  creditsHolder['numAsignaturas']--;
+	  credHolder.innerHTML = creditsHolder['credits'];
+	  asigHolder.innerHTML = creditsHolder['numAsignaturas'];
+	  
+	  trigger_creditsProgressBar();
+	} else {
+	  creditsHolder['credits'] += parseInt(asignaturas[id]['creditos']);
+	  creditsHolder['numAsignaturas']++;
+	  credHolder.innerHTML = creditsHolder['credits'];
+	  asigHolder.innerHTML = creditsHolder['numAsignaturas'];
+	  
+	  trigger_creditsProgressBar();
     }
     target.parentElement.classList.toggle('highlight');
 
@@ -86,6 +113,7 @@ function checkBoxMark(target) {
                 [].forEach.call(htmlElem.getElementsByClassName("chkAsg"), function (el) {
                   el.checked = false;
                   fireEvent(el, 'change');
+				  el.parentElement.classList.add('highlightRed');
                   el.remove();
                 });
 
@@ -137,8 +165,11 @@ function fileReaderOnLoad(event) {
         // https://stackoverflow.com/questions/37790582/how-to-get-and-use-table-in-html-by-javascript-by-getelementsbyclassname
 
         var myid = el.children[0].localName;
-        el.children[4].checked = truth;
-        fireEvent(el.children[4], 'change');
+		if(truth != false) {
+			el.children[4].checked = truth;
+			fireEvent(el.children[4], 'change');
+		}
+        
         it++;
     });
     // Or
@@ -165,6 +196,7 @@ function loadCarrera() {
     var url = "carreras/";
     url += e.options[e.selectedIndex].value;
     url += '.html';
+	resetCreditsHolder();
     httpGetAsync(url, function(result) {
         // https://stackoverflow.com/questions/10585029/parse-an-html-string-with-js
         var myLoader = document.getElementById("loader");
@@ -172,10 +204,7 @@ function loadCarrera() {
 
         var parser = new DOMParser();
         var html = parser.parseFromString(result, 'text/html');
-        myDiv = html.getElementsByClassName("btns")[0].remove();
-        if (myDiv != null) {
-            myLoader.innerHTML = "";
-        }
+        myLoader.innerHTML = "";
         document.getElementById("custom-colored").innerHTML = "";
 
         var elements;
@@ -230,6 +259,8 @@ function loadCarrera() {
                     var codigo = el.children[0].innerText.trimStart().trimEnd();
                     asignatura['label'] = el.children[1].innerText.trimStart().trimEnd();
                     asignatura['creditos'] = el.children[2].innerText.trimStart().trimEnd();
+                    creditsHolder['creditsTotal'] += parseInt(asignatura['creditos']);
+					creditsHolder['numAsignaturasTotal'] += 1;
                     asignatura['selected'] = false;
                     if (res) {
                         var matches = texty.match(expresion);
@@ -261,33 +292,58 @@ function loadCarrera() {
         Array.prototype.forEach.call(els, function(el) {
             el.addEventListener("change", change_checkBoxMark);
         });
-        document.body.style.background = "";
-        $("html").css("background", "none"); // default apec css sux
-        //$("body").append(""); // req'd
-
-        //      var prereq = el.querySelector("th:contains('Pre-Requisitos')");
-        // https://stackoverflow.com/questions/37098405/javascript-queryselector-find-div-by-innertext
-
-        //            $checkedBoxes = $row.find('input:checked');
+        document.body.style.background = "";// 
 
         // ASSIGN A CHECKBOX TO EACH TABLE ROW FOR CHOICES
         //
+        var preInfo = myLoader.getElementsByClassName("infoCarrera")[0];
+
+        var infoPlus = document.createElement('div');
+
+        var contextInnerHtml = "<h2>Información Adicional</h2>";
+        contextInnerHtml += "<h3>Créditos</h3>: <span id=\"currentCredits\">0</span> / "+creditsHolder['creditsTotal'];
+        contextInnerHtml += "<div id=\"myProgress\"><div id=\"myBar\">0%</div></div>";
+        contextInnerHtml += "<h3>Cantidad de asignaturas</h3>: <span id=\"currentAsignaturas\">0</span> / " + creditsHolder['numAsignaturasTotal'];
+		// TODO : can add milestones (like SEMINARIO status: UNAVAIL/READY/COMPLETE, PASANTIA, OPTATIVA, etc)
+            
+          infoPlus.innerHTML = contextInnerHtml;
+          infoPlus.className = 'infoCarreraPlus';
+
+        preInfo.parentNode.insertBefore(infoPlus, preInfo);
 
     });
 }
 
+function trigger_creditsProgressBar() {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = creditsHolder['credits']/creditsHolder['creditsTotal'] * 100;
+	var rounded = Math.round(width * 100) / 100;
+	elem.style.width = rounded + "%";
+	elem.innerHTML = rounded + "%";
+}
+
 function saveConfig(e) {
     sList = "";
-    /*      $('input[type=checkbox]').each(function () {
-      var sThisVal = (this.checked ? "1" : "0");
-      sList += (sList=="" ? sThisVal : "," + sThisVal);
-    });*/
-    //console.log (sList);
-    var els = document.querySelectorAll("input[type=checkbox]");
+
+    var it = 0;
+/* 
+	var els = document.querySelectorAll("input[type=checkbox]");
     Array.prototype.forEach.call(els, function(el) {
         var sThisVal = (el.checked ? "1" : "0");
         sList += (sList == "" ? sThisVal : "," + sThisVal);
     });
+*/
+
+    var els = document.getElementsByTagName("tr");
+    Array.prototype.forEach.call(els, function(el) {
+		var sThisVal = 0;
+		if(el.children[4]) {
+			sThisVal = (el.children[4].checked ? "1" : "0");
+		}
+        sList += (sList == "" ? sThisVal : "," + sThisVal);
+    });
+	
     // Start file download.
     download("config.txt", sList);
     console.log(sList);

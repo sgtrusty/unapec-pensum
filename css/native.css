@@ -10,10 +10,10 @@ html,body{
 	overflow:auto !important;
 }
 .cabPensum{
-	min-height:130px;
+	/* min-height:130px; */
 	padding:0 0 0 110px;
-	margin-bottom:50px;
-	background:url(../img/logo.png) no-repeat left center;
+	/* margin-bottom:50px; */
+	/* background:url(../img/logo.png) no-repeat left center; */
 }
 .cabPensum h1 span{
 	color:#222; text-transform:uppercase; display:block; font-weight:bold;
@@ -58,7 +58,16 @@ div.infoCarrera{
 	padding:10px 90px 10px 30px; margin-top:30px;
 	border:3px solid #9db4cd;
 	-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
-	background:url(../img/logo-info.png) no-repeat 350px center;
+	/* background:url(../img/logo-info.png) no-repeat 350px center; */
+}
+div.infoCarreraPlus{
+	font-size:12px;
+	padding:10px 90px 10px 30px;
+  margin-top:30px;
+	border:3px solid black;
+  background-color: lightgoldenrodyellow;
+	-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+  no-repeat 350px center;
 }
 .infoCarrera ul{
 	list-style:none; margin:-8px 0 0 0; padding:0;

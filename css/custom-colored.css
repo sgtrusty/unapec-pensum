@@ -3,7 +3,7 @@ table { border-collapse:collapse; border-spacing:0; }
 fieldset,img { border:0; }
 address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
 caption,th { text-align:left; }
-h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; }
+/*h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; }*/
 q:before,q:after { content:''; }
 abbr,acronym { border:0; }
 
@@ -50,3 +50,33 @@ body { background: #fff; }
 .blue {
     background-color: #A2BDFD;
 }
+
+/* PENSUM INNER CSS */
+div.infoCarreraPlus > h2 {
+  border-bottom: 8px solid #57c4d0;
+  margin-bottom: 12px;
+  /* display: inline-block; /* As I've said, adding this allowed me to do so, but the result was far from ideal! */
+}
+div.infoCarreraPlus > h3 {
+  display: inline-block;
+}
+div.infoCarreraPlus > span#currentCredits {
+  font-style: italic;
+}
+div.infoCarreraPlus > span#currentAsignaturas {
+  font-style: italic;
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  margin-bottom:8px;
+}
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+
