@@ -18,6 +18,10 @@ body { background: #fff; }
   /*background-color:lawngreen;*/
   background-color:cornflowerblue;
 }
+.highlightTemp {
+  /*background-color:lawngreen;*/
+  background-color:yellowgreen;
+}
 .highlightRed {
   background-color:#f4b7b7;
 }

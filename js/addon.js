@@ -27,10 +27,13 @@ var prereqs = [];
 var sList = "";
 var fileReader;
 var fileLoader;
+var highlightSpec;
 
 var creditsHolder = {};
 
 function resetCreditsHolder() {
+    asignaturas = [];
+    prereqs = [];
 	creditsHolder = {
 		credits: 0,
 		creditsTotal: 0,
@@ -72,7 +75,20 @@ function checkBoxMark(target) {
 	  
 	  trigger_creditsProgressBar();
     }
-    target.parentElement.classList.toggle('highlight');
+    var classToSet = "highlight";
+    if(highlightSpec) {
+        classToSet = "highlightTemp";
+        target.parentElement.setAttribute("class", "");
+    }
+    if(!checked && target.parentElement.classList.contains("highlightTemp")) {
+        target.parentElement.classList.remove("highlightTemp");
+    } else {
+        if(checked) {
+            target.parentElement.classList.add(classToSet);
+        } else {
+            target.parentElement.classList.remove(classToSet);
+        }
+    }
 
     asignaturas[id]['selected'] = checked;
 
@@ -151,11 +167,15 @@ function fileReaderOnLoad(event) {
     // str = window.atob('' + str);
     //     console.log(str);
     sList = str.split(",");
-    var it = 0;
+    highlightSpec = true;
 
     // https://stackoverflow.com/questions/3871547/js-iterating-over-result-of-getelementsbyclassname-using-array-foreach
     var els = document.getElementsByTagName("tr");
-    Array.prototype.forEach.call(els, function(el) {
+//    Array.prototype.forEach.call(els, function(el) {
+    for(var it = 0; it < els.length; it++)
+    {
+        var el = els[it];
+        // console.log(el);
         // Do stuff here
         // console.log(el.tagName);
 
@@ -165,17 +185,18 @@ function fileReaderOnLoad(event) {
         // https://stackoverflow.com/questions/37790582/how-to-get-and-use-table-in-html-by-javascript-by-getelementsbyclassname
 
         var myid = el.children[0].localName;
-		if(truth != false) {
-			el.children[4].checked = truth;
-			fireEvent(el.children[4], 'change');
+//		if(truth != false) {
+        if(el.children[4] != null) {
+            el.children[4].checked = truth;
+            fireEvent(el.children[4], 'change');
 		}
-        
-        it++;
-    });
+  //  });
     // Or
     // [].forEach.call(els, function (el) {...});
 
     // $("table tr").each(function (i, row) {
+    }
+    highlightSpec = false;
     // });
     // $("#file1").val('');
     fileLoader.value = "";
