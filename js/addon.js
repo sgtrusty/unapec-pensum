@@ -453,6 +453,8 @@ $(document).ready(function() {
             };
             if (value['selected'] == true) {
                 myobj['HTMLclass'] = 'highlight';
+            } else if(value['disabled'] == true) {
+                myobj['HTMLclass'] = 'highlightRed';
             }
             cfgs[index] = myobj;
             chart_config.push(myobj);
