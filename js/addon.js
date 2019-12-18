@@ -24,6 +24,7 @@ var config = { // initial cfg for diagram
 var myDiv = null;
 var asignaturas = [];
 var prereqs = [];
+var prereqs_perc = [];
 var sList = "";
 var fileReader;
 var fileLoader;
@@ -31,9 +32,27 @@ var highlightSpec;
 
 var creditsHolder = {};
 
+function workThingHighlight(myThing, checked) {
+    var classToSet = "highlight";
+    if(highlightSpec) {
+        classToSet = "highlightTemp";
+        myThing.setAttribute("class", "");
+    }
+    if(!checked && myThing.classList.contains("highlightTemp")) {
+        myThing.classList.remove("highlightTemp");
+    } else {
+        if(checked) {
+            myThing.classList.add(classToSet);
+        } else {
+            myThing.classList.remove(classToSet);
+        }
+    }
+}
+
 function resetCreditsHolder() {
     asignaturas = [];
     prereqs = [];
+    prereqs_perc = [];
 	creditsHolder = {
 		credits: 0,
 		creditsTotal: 0,
@@ -75,20 +94,7 @@ function checkBoxMark(target) {
 	  
 	  trigger_creditsProgressBar();
     }
-    var classToSet = "highlight";
-    if(highlightSpec) {
-        classToSet = "highlightTemp";
-        target.parentElement.setAttribute("class", "");
-    }
-    if(!checked && target.parentElement.classList.contains("highlightTemp")) {
-        target.parentElement.classList.remove("highlightTemp");
-    } else {
-        if(checked) {
-            target.parentElement.classList.add(classToSet);
-        } else {
-            target.parentElement.classList.remove(classToSet);
-        }
-    }
+    workThingHighlight(target.parentElement, checked);
 
     asignaturas[id]['selected'] = checked;
 
@@ -268,11 +274,16 @@ function loadCarrera() {
                     /////////////////////////////////////////
                     // the making of a configuration array //
                     /////////////////////////////////////////
-                    var texty = el.children[3].innerText; // ยง export dynamic table?
+                    var texty = el.children[3].innerText; // TODO: export dynamic table?
 
                     var expresion = /[A-Z]{3}[0-9]{3}/gi;
                     var patt = new RegExp(expresion);
+
+                    var exp2 = /(\d{2})\%.+/gi;
+                    var patt2 = new RegExp(exp2);
+
                     var res = patt.test(texty);
+                    var res2 = patt2.test(texty);
 					
                     var asignatura = [];
                     asignatura['htmlref'] = el;
@@ -299,7 +310,17 @@ function loadCarrera() {
                         // the formation of a checkbox //
                         /////////////////////////////////
                         // insertAdjacentHTML('beforeend'
-                        var checkbox = el.insertAdjacentHTML('beforeend', '<input class="chkAsg" type="checkbox"/>');
+                        if (res2) {
+                            var matches = exp2.exec(texty);
+                            if (!prereqs_perc[matches[1]]) {
+                                prereqs_perc[matches[1]] = [];
+                                prereqs_perc[matches[1]].push(codigo);
+                            }
+                            asignatura['disabled'] = true;
+                            el.classList.toggle('highlightRed');
+                        } else {
+                            var checkbox = el.insertAdjacentHTML('beforeend', '<input class="chkAsg" type="checkbox"/>');
+                        }
                     }
                     asignaturas[codigo] = asignatura;
                 }
@@ -331,7 +352,7 @@ function loadCarrera() {
           infoPlus.className = 'infoCarreraPlus';
 
         preInfo.parentNode.insertBefore(infoPlus, preInfo);
-
+        console.log(prereqs_perc);
     });
 }
 
@@ -359,7 +380,39 @@ function trigger_creditsProgressBar() {
 		elem.classList.add("status2");
 	} else {
 		elem.classList.add("status1");
-	}
+    }
+    
+    [].forEach.call(prereqs_perc,
+        function(elem, index) {
+            if(index <= rounded) {
+                elem.map(function(a) {
+                    var htmlElem = asignaturas[a].htmlref;
+                    if (asignaturas[a]['disabled'] == true) {
+                        var checkbox = document.createElement('input');
+                        checkbox.type = "checkbox";
+                        checkbox.className = "chkAsg";
+                        checkbox.onchange = change_checkBoxMark;
+
+                        htmlElem.insertAdjacentElement('beforeend', checkbox);
+                        asignaturas[a]['disabled'] = false;
+                        if (htmlElem.classList.contains('highlightRed')) {
+                            htmlElem.classList.remove('highlightRed');
+                        }
+                    }
+                });
+            } else {
+                elem.map(function(a) {
+                    var htmlElem = asignaturas[a].htmlref;
+                    [].forEach.call(htmlElem.getElementsByClassName("chkAsg"), function (el) {
+                        el.checked = false;
+                        fireEvent(el, 'change');
+                        el.parentElement.classList.add('highlightRed');
+                        el.remove();
+                    });
+                });
+            }
+        }
+    );
 }
 
 function saveConfig(e) {

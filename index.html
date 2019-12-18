@@ -22,28 +22,48 @@
 </head>
 
 <body>
-  <select id="dropper">
-    <option value="adm">Licenciatura En Administración De Empresas</option>
-    <option value="ath">Licenciatura En Administración Turística Y Hotelera</option>
-    <option value="cdg">Licenciatura En Comunicación Digital</option>
-    <option value="con">Licenciatura En Contabilidad</option>
-    <option value="der">Licenciatura En Derecho</option>
-    <option value="dig">Licenciatura En Diseño Gráfico</option>
-    <option value="din">Licenciatura En Diseño De Interiores</option>
-    <option value="fin">Licenciatura En Finanzas</option>
-    <option value="iel">Ingeniería Electronica</option>
-    <option value="ind">Ingeniería Industrial</option>
-    <option value="ine">Ingeniería Eléctrica</option>
-    <option value="iso">Ingenieria de Software</option>
-    <option value="isc">Ingenieria de Computacion</option>
-    <option value="les">Licenciatura En Lengua Española Y Literatura Orientada A La Educación Secundaria</option>
-    <option value="lie">Licenciatura En Ingles Orientada A La Enseñanza</option>
-    <option value="lms">Licenciatura En Matemática Orientada A La Educación Secundaria</option>
-    <option value="mer">Licenciatura En Mercadotecnia</option>
-    <option value="nin">Licenciatura En Negocios Internacionales</option>
-    <option value="pub">Licenciatura En Publicidad</option>
-    <option value="taf">Técnico Analista Financiero</option>
-
+    <!-- https://unapec.edu.do/Departamentos -->
+    <!-- https://unapec.edu.do/Academia -->
+   <select id="dropper">
+    <optgroup label="Decanato de Ciencias Económicas y Empresariales">
+        <option disabled>Escuela de Administración</option>
+            <option value="adm">> Licenciatura En Administración De Empresas</option>
+        <option disabled>Escuela de Contabilidad y Finanzas</option>
+            <option value="con">> Licenciatura En Contabilidad</option>
+            <option value="fin">> Licenciatura En Finanzas</option>
+            <option value="taf">> Técnico Analista Financiero</option>
+        <option disabled>Escuela de Mercadeo y Negocios Internacionales</option>
+            <option value="mer">> Licenciatura En Mercadotecnia</option>
+            <option value="nin">> Licenciatura En Negocios Internacionales</option>
+    </optgroup>
+    <optgroup label="Decanato de Estudios Generales">
+        <option value="les">> Licenciatura En Lengua Española Y Literatura Orientada A La Educación Secundaria</option>
+        <option value="lms">> Licenciatura En Matemática Orientada A La Educación Secundaria</option>
+    </optgroup>
+    <optgroup label="Decanato de Ingeniería e Informática">
+        <option disabled>Escuela de Ingenieria</option>
+            <option value="ine">> Ingeniería Eléctrica</option>
+            <option value="iel">> Ingeniería Electrónica</option>
+            <option value="ind">> Ingeniería Industrial</option>
+        <option disabled>Escuela de Informática</option>
+            <option value="isc">> Ingeniería de Computacion</option>
+            <option value="iso">> Ingeniería de Software</option>
+    </optgroup>
+    <optgroup label="Decanato de Derecho">
+        <option value="der">> Licenciatura En Derecho</option>
+    </optgroup>
+    <optgroup label="Decanato de Artes y Comunicación">
+        <option value="din">> Licenciatura En Diseño De Interiores</option>
+        <option value="dig">> Licenciatura En Diseño Gráfico</option>
+        <option value="pub">> Licenciatura En Publicidad</option>
+        <option value="cdg">> Licenciatura En Comunicación Digital</option>
+    </optgroup>
+    <optgroup label="Decanato de Turismo">
+        <option value="ath">> Licenciatura En Administración Turística Y Hotelera</option>
+    </optgroup>
+    <optgroup label="Escuela de Idiomas">
+        <option value="lie">> Licenciatura En Ingles Orientada A La Enseñanza</option>
+    </optgroup>
   </select>
   <button type="button" id="dropperBtn">Cargar</button>
   <div style="margin-top:15px; display:block;">
