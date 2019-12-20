@@ -55,10 +55,16 @@ function resetCreditsHolder() {
     prereqs_perc = [];
 	creditsHolder = {
 		credits: 0,
+		seleccion: 0,
 		creditsTotal: 0,
 		numAsignaturas: 0,
 		numAsignaturasTotal: 0
 	};
+}
+
+function slcHandleChange(myRadio) {
+    var selcMaxHolder = document.getElementById("currentSelectMax");
+    selcMaxHolder.innerHTML = myRadio.value;
 }
 
 function checkBoxMark(target) {
@@ -70,6 +76,7 @@ function checkBoxMark(target) {
     // TODO: pattern ".\d\% De los créditos aprobados" spec. req
     var credHolder = document.getElementById("currentCredits");
     var asigHolder = document.getElementById("currentAsignaturas");
+    var selcHolder = document.getElementById("currentSelect");
     if (checked == false) {
         var header = target.parentElement.parentElement.querySelector(".headcheck");
         var checkboxes = header.querySelectorAll("input[type=checkbox]");
@@ -81,24 +88,34 @@ function checkBoxMark(target) {
 			}
         });
 	  creditsHolder['credits'] -= parseInt(asignaturas[id]['creditos']);
+      if(!highlightSpec) {
+        creditsHolder['seleccion'] -= parseInt(asignaturas[id]['creditos']);
+      }
 	  creditsHolder['numAsignaturas']--;
-	  credHolder.innerHTML = creditsHolder['credits'];
-	  asigHolder.innerHTML = creditsHolder['numAsignaturas'];
 	  
 	  trigger_creditsProgressBar();
 	} else {
 	  creditsHolder['credits'] += parseInt(asignaturas[id]['creditos']);
+      if(!highlightSpec) {
+        creditsHolder['seleccion'] += parseInt(asignaturas[id]['creditos']);
+      }
 	  creditsHolder['numAsignaturas']++;
-	  credHolder.innerHTML = creditsHolder['credits'];
-	  asigHolder.innerHTML = creditsHolder['numAsignaturas'];
 	  
 	  trigger_creditsProgressBar();
     }
+    credHolder.innerHTML = creditsHolder['credits'];
+    asigHolder.innerHTML = creditsHolder['numAsignaturas'];
+    selcHolder.innerHTML = creditsHolder['seleccion'];
     workThingHighlight(target.parentElement, checked);
+    if(highlightSpec) {
+        target.disabled = true;
+    }
 
     asignaturas[id]['selected'] = checked;
 
     if (prereqs[id]) {
+
+        // it should be noted some recursion begins here
         var value;
         // TODO: eval performance for vs map
         for (var index = 0; index < prereqs[id].length; ++index) {
@@ -156,9 +173,11 @@ function change_checkHeaderBoxMark(event) {
 	}
 	Array.prototype.forEach.call(event.target.parentElement.parentElement.getElementsByClassName("chkAsg"),
 		function(element, index) {
-			//				var objRef = element.getElementsByClassName("input[type=checkbox]")[0];
-			element.checked = checked;
-			fireEvent(element, 'change');
+            //				var objRef = element.getElementsByClassName("input[type=checkbox]")[0];
+            if(!element.disabled) {
+                element.checked = checked;
+                fireEvent(element, 'change');
+            }
 			//			element.children("input[type=checkbox]").attr("checked", checked).trigger("change");
 		});
 }
@@ -334,12 +353,28 @@ function loadCarrera() {
         contextInnerHtml += "<h3>Créditos</h3>: <span id=\"currentCredits\">0</span> / "+creditsHolder['creditsTotal'];
         contextInnerHtml += "<div id=\"myProgress\"><div id=\"myBar\">0%</div></div>";
         contextInnerHtml += "<h3>Cantidad de asignaturas</h3>: <span id=\"currentAsignaturas\">0</span> / " + creditsHolder['numAsignaturasTotal'];
+
+        // max creds : https://www.unapec.edu.do/media/1334/reg-vc-0023-reglamento-estudiantil005.pdf
+        contextInnerHtml += "<h3>Cantidad de selección</h3>: <span id=\"currentSelect\">0</span> / " + "<span id=\"currentSelectMax\">0</span>";
+
+        contextInnerHtml += "<br><h3>Cómo me esta llendo</h3>:"
+        contextInnerHtml += "<ul>"
+        contextInnerHtml += "<li><input type=\"radio\" name=\"slcMax\" id=\"slcNormal\" onchange=\"slcHandleChange(this);\" value=\"24\"><label for=\"slcNormal\">Jebi [NORMAL]</label></li>";
+        contextInnerHtml += "<li><input type=\"radio\" name=\"slcMax\" id=\"slcBenef\" onchange=\"slcHandleChange(this);\" value=\"27\"><label for=\"slcBenef\">Muy jebi [>=3.25]</label></li>";
+        contextInnerHtml += "<li><input type=\"radio\" name=\"slcMax\" id=\"slcPleb\" onchange=\"slcHandleChange(this);\" value=\"15\"><label for=\"slcPleb\">Me toy j*****do [>=2.5]</label></li>";
+        contextInnerHtml += "<li><input type=\"radio\" name=\"slcMax\" id=\"slcGGn00b\" onchange=\"slcHandleChange(this);\" value=\"13\"><label for=\"slcGGn00b\">GG WP [Prueba Académica]</label></li>";
+        contextInnerHtml += "</ul>"
+        contextInnerHtml += "¿<a href=\"img/maxcreds.png\" target=\"_blank\">Qué significa esto</a>? Las <a href=\"https://www.unapec.edu.do/media/1334/reg-vc-0023-reglamento-estudiantil005.pdf#page=14&zoom=175,109,320\">reglas</a> son importantes."
+
 		// TODO : can add milestones (like SEMINARIO status: UNAVAIL/READY/COMPLETE, PASANTIA, OPTATIVA, etc)
             
           infoPlus.innerHTML = contextInnerHtml;
           infoPlus.className = 'infoCarreraPlus';
 
         preInfo.parentNode.insertBefore(infoPlus, preInfo);
+
+        slcHandleChange(document.getElementById("slcNormal"));
+        document.getElementById("slcNormal").checked = true;
     });
 }
 
@@ -429,6 +464,7 @@ function saveConfig(e) {
 
 window.onload = function() {
     document.getElementById("dropper").addEventListener("change", loadCarrera);
+    document.getElementById("dropperBtn").addEventListener("click", loadCarrera);
     // FOR THE PURPOSE OF SAVING THE CONFIGURATION TO THE TEXT BOX
     // FOR THE PURPOSE OF DOWNLOADING TO A JSON [pending JSON]
     document.querySelector("a#programatically").addEventListener("click", saveConfig);

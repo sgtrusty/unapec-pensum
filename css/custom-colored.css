@@ -67,7 +67,7 @@ div.infoCarreraPlus > h3 {
 div.infoCarreraPlus > span#currentCredits {
   font-style: italic;
 }
-div.infoCarreraPlus > span#currentAsignaturas {
+div.infoCarreraPlus > span#currentAsignaturas, div.infoCarreraPlus > span#currentSelect {
   font-style: italic;
 }
 #myProgress {
