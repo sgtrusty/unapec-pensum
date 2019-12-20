@@ -170,41 +170,26 @@ function change_checkBoxMark(event) { // enable selection upon use
 function fileReaderOnLoad(event) {
     var data = event.target.result; // data <-- in this var you have the file data in Base64 format
     var str = data.replace('data:text/plain;base64,', '')
-    // str = window.atob('' + str);
-    //     console.log(str);
     sList = str.split(",");
     highlightSpec = true;
 
     // https://stackoverflow.com/questions/3871547/js-iterating-over-result-of-getelementsbyclassname-using-array-foreach
     var els = document.getElementsByTagName("tr");
-//    Array.prototype.forEach.call(els, function(el) {
     for(var it = 0; it < els.length; it++)
     {
         var el = els[it];
-        // console.log(el);
-        // Do stuff here
-        // console.log(el.tagName);
-
         // TODO: un- chopped'n'screwed
 
         var truth = parseInt(sList[it]) == 1 ? true : false;
         // https://stackoverflow.com/questions/37790582/how-to-get-and-use-table-in-html-by-javascript-by-getelementsbyclassname
 
         var myid = el.children[0].localName;
-//		if(truth != false) {
         if(el.children[4] != null) {
             el.children[4].checked = truth;
             fireEvent(el.children[4], 'change');
-		}
-  //  });
-    // Or
-    // [].forEach.call(els, function (el) {...});
-
-    // $("table tr").each(function (i, row) {
+        }
     }
     highlightSpec = false;
-    // });
-    // $("#file1").val('');
     fileLoader.value = "";
 }
 
@@ -219,6 +204,9 @@ function loadCarrera() {
     // FIRST THINGS FIRST;
     // THE CODE BEGINS HERE. THIS IS WHERE THE PENSUM IS LOADED.
     var e = document.getElementById("dropper");
+    if(e == "NONE") {
+        return;
+    }
 
     var url = "carreras/";
     url += e.options[e.selectedIndex].value;
@@ -246,7 +234,7 @@ function loadCarrera() {
 
         myDiv = html.getElementsByClassName("contPensum")[0];
         myLoader.appendChild(myDiv);
-        document.getElementById("loadbtn").addEventListener("click", function() {
+        document.getElementById("loadbtn").addEventListener("mouseup", function() {
             // https://stackoverflow.com/questions/2381572/how-can-i-trigger-a-javascript-event-click
             fileLoader.click();
         }, false);
@@ -352,7 +340,6 @@ function loadCarrera() {
           infoPlus.className = 'infoCarreraPlus';
 
         preInfo.parentNode.insertBefore(infoPlus, preInfo);
-        console.log(prereqs_perc);
     });
 }
 
@@ -438,11 +425,10 @@ function saveConfig(e) {
 	
     // Start file download.
     download("config.txt", sList);
-    console.log(sList);
 }
 
 window.onload = function() {
-    document.getElementById("dropperBtn").addEventListener("click", loadCarrera);
+    document.getElementById("dropper").addEventListener("change", loadCarrera);
     // FOR THE PURPOSE OF SAVING THE CONFIGURATION TO THE TEXT BOX
     // FOR THE PURPOSE OF DOWNLOADING TO A JSON [pending JSON]
     document.querySelector("a#programatically").addEventListener("click", saveConfig);
@@ -486,7 +472,6 @@ $(document).ready(function() {
         var cfgs = []; // i can has cfg?
 
         // recursive run in order to configure each diagram object
-        console.log(asignaturas);
         looper(asignaturas, function(index, value) {
             var parent = main; // all courses start from the programme identifier [PI]
             if (value['prereq'] && value['prereq'].length > 0) {

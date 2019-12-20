@@ -1,6 +1,15 @@
 html,body{
 	background:#3d679c url(../img/bg_pensum.jpg) repeat-x center top; margin:0; padding:0;
 }
+
+.cabPensum > ul > li > a > img {
+    display: none;
+}
+
+li {
+    list-style-type: none;
+}
+
 .contPensum{
 	margin:0 auto; padding:25px 20px 50px 20px;
 	width:893px;
